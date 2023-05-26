@@ -1,0 +1,50 @@
+﻿@model List<Client>
+@section title{
+    <title>Clients sans retour</title>
+}
+
+<table class="table">
+    <tr>
+        <th>Nom</th>
+        <th>Prenom</th>
+        <th>Tel</th>
+        <th>Locations</th>
+        <th>Prix total</th>
+
+
+
+    </tr>
+    @foreach (Client client in Model)
+    {
+        <tr>
+            <td>@client.nom</td>
+            <td>@client.prenom</td>
+            <td>@client.tel</td>
+            <td>
+
+                @foreach (Location location in client.locations)
+                {
+                    @if (location.retour == false)
+                    {
+                        <p>ce client a une location en cours</p>
+                    }
+
+
+
+                }
+
+
+            </td>
+            <td>@client.SommeTotal</td>
+
+
+
+
+
+        </tr>
+    }
+
+
+
+
+</table>

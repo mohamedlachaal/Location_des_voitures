@@ -1,0 +1,36 @@
+﻿@model Utilisateur
+<form method="post" action="#">
+    <div class="form-group">
+
+        <label asp-for="Nom"></label>
+        <input asp-for="Nom" class="form-control" />
+        <span asp-validation-for="Nom"></span>
+    </div>
+    <div class="form-group">
+
+        <label asp-for="Prenom"></label>
+        <input asp-for="Prenom" class="form-control" />
+        <span asp-validation-for="Prenom"></span>
+    </div>
+    <div class="form-group">
+
+        <label asp-for="Username"></label>
+        <input asp-for="Username" class="form-control" />
+        <span asp-validation-for="Username"></span>
+    </div>
+    <div class="form-group">
+
+        <label asp-for="Password"></label>
+        <input type="password" asp-for="Password" class="form-control" />
+        <span asp-validation-for="Password"></span>
+    </div>
+    <div class="form-group">
+
+        <label asp-for="RecPassword"></label>
+        <input type="password" asp-for="RecPassword" class="form-control" />
+        <span asp-validation-for="RecPassword"></span>
+    </div>
+    <input type="submit" value="ajouter un utilisateur" onclick="return confirm('are u sure about those informations?')" />
+
+
+</form>

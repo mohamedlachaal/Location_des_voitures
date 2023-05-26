@@ -1,0 +1,25 @@
+﻿@model Voiture
+@section title{
+    <title>Ajouter une voiture</title>
+}
+<form action="#" method="post" enctype="multipart/form-data">
+    <label asp-for="matricule"></label>
+    <input asp-for="matricule" class="form-control" />
+    <span asp-validation-for="matricule"></span>
+    <label asp-for="nbr_portes"></label>
+    <input asp-for="nbr_portes" class="form-control" />
+    <span asp-validation-for="nbr_portes"></span>
+    <label asp-for="nbr_places"></label>
+    <input asp-for="nbr_places" class="form-control" />
+    <span asp-validation-for="nbr_places"></span>
+    <label asp-for="photo_1"></label>
+    <input type="file" name="image" class="form-control" />
+    <span asp-validation-for="photo_1"></span>
+    <label asp-for="couleur"></label>
+    <input type="color" asp-for="couleur" class="form-control" />
+    <span asp-validation-for="couleur"></span>
+    <label asp-for="MarqueId" class="control-label"></label>
+    <select asp-for="MarqueId" class="form-control" asp-items="ViewBag.MarqueId"></select>
+    <input type="submit" class="btn btn-primary" value="Ajouter une voiture" />
+
+</form>

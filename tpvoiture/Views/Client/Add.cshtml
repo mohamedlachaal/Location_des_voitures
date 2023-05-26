@@ -1,0 +1,18 @@
+﻿@model Client
+@section title{
+    <title>Ajouter un client</title>
+}
+<form action="#" method="post">
+    <label asp-for="nom"></label>
+    <input asp-for="nom" class="form-control" />
+    <span asp-validation-for="nom"></span>
+    <label asp-for="prenom"></label>
+    <input asp-for="prenom" class="form-control" />
+    <span asp-validation-for="prenom"></span>
+    <label asp-for="tel"></label>
+    <input asp-for="tel" class="form-control" />
+    <span asp-validation-for="tel"></span>
+    <input type="submit" value="ajouter un client" />
+
+
+</form>

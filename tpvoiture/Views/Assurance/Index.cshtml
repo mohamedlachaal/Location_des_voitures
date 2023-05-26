@@ -1,0 +1,41 @@
+﻿@model List<Assurance>
+
+@section title{
+    <title>Liste des Assuarances</title>
+}
+<table class="table">
+
+    <tr>
+        <th>agence</th>
+        <th>date debut</th>
+        <th>date fin</th>
+        <th>prix</th>
+        <th>id du voiture</th>
+        <th>actions</th>
+
+    </tr>
+
+    @foreach (Assurance assurance in Model)
+    {
+        <tr>
+            <td>@assurance.agence</td>
+            <td>@assurance.date_debut</td>
+            <td>@assurance.date_fin</td>
+            <td>@assurance.prix</td>
+            <td>@assurance.VoitureId</td>
+
+
+
+
+
+
+            <td><a asp-action="Delete" asp-route-id="@assurance.id" onclick="return confirm('are u sure you want delete this assurance')">Delete</a>
+                <a asp-action="Imprimer" onclick="return confirm('are u sure you want report this assurance')">Imprimer</a>
+            </td>
+
+        </tr>
+    }
+
+
+
+</table>

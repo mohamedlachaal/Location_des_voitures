@@ -1,0 +1,20 @@
+﻿@model Assurance
+@section title{
+    <title>Ajouter une assurance</title>
+}
+<form action="#" method="post">
+    <label asp-for="agence"></label>
+    <input asp-for="agence" class="form-control" />
+    <span asp-validation-for="agence"></span>
+    <label asp-for="date_debut"></label>
+    <input asp-for="date_debut" class="form-control" />
+    <span asp-validation-for="date_debut"></span>
+    <label asp-for="date_fin"></label>
+    <input asp-for="date_fin" class="form-control" />
+    <span asp-validation-for="date_fin"></span>
+    <label asp-for="prix"></label>
+    <input asp-for="prix" class="form-control" />
+    <span asp-validation-for="prix"></span>
+    <input type="submit" value="ajouter une assurance" />
+
+</form>

@@ -1,0 +1,99 @@
+﻿@model List<Voiture>
+@section title{
+    <title>Liste des voitures</title>
+}
+
+
+    <p>
+        <a asp-action="Add">Ajouter des voitures</a>
+    </p>
+
+    <table class="table">
+        <tr>
+
+            <th>Matricule</th>
+            <th>photo</th>
+            <th>Marque</th>
+            <th>Assurance</th>
+            <th>Locations</th>
+            <th>Actions</th>
+
+        </tr>
+        @foreach (Voiture voiture in Model)
+        {
+            <tr>
+
+
+                <td>@voiture.matricule</td>
+
+                <td><img src="~/images/@voiture.photo_1" width="150"></td>
+                <td>
+                    @voiture.Marque.libelle
+                </td>
+                <td class="w-25">
+                    <ul class="list-group">
+                        @foreach (Assurance assurance in voiture.assurances)
+                        {
+                            <li class="list-group-item active d-flex justify-content-between align-items-center">
+                                @assurance.agence
+
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                date debut:
+                                <span class="badge badge-primary badge-pill">      @assurance.date_debut</span>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                date_fin :
+                                <span class="badge badge-primary badge-pill">@assurance.date_fin </span>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                prix :
+                                <span class="badge badge-primary badge-pill">@assurance.prix dh </span>
+                            </li>
+                        }
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                            la Somme des assurances :  <span class="badge badge-primary badge-pill"> @voiture.SommeAssurance DH</span>
+                        </li>
+                    </ul>
+
+                </td>
+                <td>
+                    <ul class="list-group">
+
+                        @foreach (Location location in voiture.locations)
+                        {
+                            <li class="list-group-item  d-flex justify-content-between align-items-center ">
+                                date de debut <span class="badge badge-success badge-pill">  @location.date_debut </span>
+                            </li>
+                            <li class="list-group-item  d-flex justify-content-between align-items-center">
+                                date du fin <span class="badge badge-success badge-pill">  @location.date_fin </span>
+                            </li>
+                            <li class="list-group-item  d-flex justify-content-between align-items-center">
+                                prix par jour   <span class="badge badge-success badge-pill">  @location.prixjour DH</span>
+                            </li>
+                        }
+                        <li class="list-group-item  d-flex justify-content-between align-items-center">
+                            Prix Total des Location: <span class="badge badge-success badge-pill">  @voiture.SommeLocation DH </span>
+                        </li>
+
+                    </ul>
+                </td>
+
+                <td>
+                    <a asp-action="Delete" asp-route-id="@voiture.id" onclick="return confirm('are u sure you want delete this car')">Delete</a>
+                    <a asp-action="Update" asp-route-id="@voiture.id">Edit</a>
+                    <a asp-action="Details" asp-route-id="@voiture.id">Details</a>
+                    <a asp-controller="Assurance" asp-action="Add" asp-route-id="@voiture.id">Ajouter une assurance</a>
+                    <a asp-controller="Location" asp-action="Add" asp-route-id="@voiture.id">Ajouter une Location</a>
+
+                </td>
+
+
+            </tr>
+        }
+
+
+
+
+
+    </table>

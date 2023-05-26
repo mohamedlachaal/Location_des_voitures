@@ -1,0 +1,55 @@
+﻿@model Voiture
+@section title{
+    <title>Details d'une voiture'</title>
+}
+<h1>Details</h1>
+
+<div>
+    <h4>Voiture</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.matricule)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.matricule)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.nbr_portes)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.nbr_portes)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.nbr_places)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.nbr_places)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.photo_1)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.photo_1)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.couleur)
+        </dt>
+        <dd class="col-sm-10">
+            <div style="background-color :@Html.DisplayFor(model => model.couleur) ; height:20px;width:70px" ></div>
+          
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Marque)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Marque.libelle)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Update" asp-route-id="@Model.id">Edit</a> |
+    <a asp-action="Delete" asp-route-id="@Model.id" onclick="return confirm('are u sure you want delete this car')">Delete</a> | 
+    <a asp-action="Imprimer" >Imprimer</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

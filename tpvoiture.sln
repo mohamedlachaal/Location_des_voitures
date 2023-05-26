@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.32106.194
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "tpvoiture", "tpvoiture\tpvoiture.csproj", "{FDFC61C8-7073-4635-8E5B-9CC17C90E25D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rapport", "Rapport\Rapport.csproj", "{E2AF3B1E-D708-49D2-B5B7-89CF0E921850}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FDFC61C8-7073-4635-8E5B-9CC17C90E25D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FDFC61C8-7073-4635-8E5B-9CC17C90E25D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FDFC61C8-7073-4635-8E5B-9CC17C90E25D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FDFC61C8-7073-4635-8E5B-9CC17C90E25D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E2AF3B1E-D708-49D2-B5B7-89CF0E921850}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E2AF3B1E-D708-49D2-B5B7-89CF0E921850}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E2AF3B1E-D708-49D2-B5B7-89CF0E921850}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E2AF3B1E-D708-49D2-B5B7-89CF0E921850}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1B1402C6-EF1E-46B2-A148-E65A5A7431A7}
+	EndGlobalSection
+EndGlobal

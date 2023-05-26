@@ -1,0 +1,27 @@
+﻿@model List<Location>
+@section title{
+    <title>Liste des locations</title>
+}
+<table class="table">
+    <tr>
+        <th>nom du client </th>
+        <th>id voiture </th>
+        <th>date debut </th>
+        <th> date fin</th>
+        <!--<th>actions</th>-->
+    </tr>
+    @foreach (Location location in Model)
+    {
+        <tr>
+            <td>@location.client.NomComplet</td>
+
+            <td>@location.VoitureId</td>
+            <td>@location.date_debut</td>
+            <td>@location.date_fin</td>
+            <td><a asp-action="Imprimer" asp-route-id="@location.id">Imprimer Contrat</a></td>
+        </tr>
+
+    }
+
+
+</table>

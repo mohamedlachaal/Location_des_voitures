@@ -1,0 +1,105 @@
+﻿@model IEnumerable<tpvoiture.Models.Voiture>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.matricule)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.nbr_portes)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.nbr_places)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.photo_1)
+            </th>
+     
+            <th>
+                @Html.DisplayNameFor(model => model.Marque.libelle)
+            </th>
+            <th>assurance</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.matricule)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.nbr_portes)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.nbr_places)
+
+            </td>
+            <td><img src="~/images/@item.photo_1"  width="150" height="150">
+            </td>
+       
+            <td>
+                @Html.DisplayFor(modelItem => item.Marque.libelle)
+            </td>
+            <td>
+
+                <ol>
+                    <li>agence:</li>
+                    <li>date debut</li>
+                    <li> date fin </li>
+                </ol>
+                <ol>
+                    @foreach (var assurance in item.assurances)
+                    {
+                        <li>
+
+                            @assurance.agence
+                        </li>
+                        <li>
+
+                            @assurance.date_debut
+                        </li>
+                        <li>
+
+                            @assurance.date_fin
+                        </li>
+
+                    }
+                    <li>@item.SommeAssurance</li>
+                </ol>
+
+                  
+            </td>
+            <td>
+                <ul>
+                    @foreach(Location location in item.locations)
+                {
+                    <li>@location.date_debut</li>
+                    <li>@location.date_fin</li>
+                    
+                }
+                    <li>@item.SommeLocation</li>
+                </ul>
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.id" class="btn btn-outline-info" >Edit</a> <br />
+                <a asp-action="Details" asp-route-id="@item.id" class="btn btn-outline-info" >Details</a><br />
+                <a asp-action="Delete" asp-route-id="@item.id" class="btn btn-outline-info" >Delete</a> <br />
+                <a asp-controller="Assurances" asp-action="Create" asp-route-id="@item.id" class="btn btn-outline-info"  >Add An Assurance</a><br />
+                <a asp-controller="Locations" asp-action="Create" asp-route-id="@item.id" class="btn btn-outline-info" >Add An Location</a><br />
+                <a asp-controller="Locations" asp-action="UpdateRetour" asp-route-id="@item.id" class="btn btn-outline-info" >RETURN</a><br />
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

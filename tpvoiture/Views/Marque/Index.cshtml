@@ -1,0 +1,41 @@
+﻿@model List<Marque>
+@section title{
+    <title>Liste des Marque</title>
+}
+<p>
+    <a asp-action="Add">Ajouter une marque</a>
+</p>
+<table class="table w-100 h-100    ">
+    <tr>
+        <th>ID</th>
+        <th>Libelle</th>
+        <th>Matricule</th>
+        <th>Action</th>
+    </tr>
+    @foreach (Marque marque in Model)
+    {
+        <tr>
+            <td>@marque.id</td>
+            <td>@marque.libelle</td>
+            <td>
+                <ul>
+
+                    @foreach (Voiture voiture in marque.voitures)
+                    {
+                        <li>
+                            @voiture.matricule
+                        </li>
+                    }
+                </ul>
+            </td>
+            <td>
+                <a asp-controller="Marque" asp-action="Delete" asp-route-id="@marque.id" class="btn btn-light" onclick="return confirm('are you sure you wanna delete this marque?')">Delete</a>
+                <a asp-controller="Marque" asp-action="Update" asp-route-id="@marque.id" class="btn btn-light">Edit</a>
+            </td>
+
+        </tr>
+
+    }
+
+
+</table>

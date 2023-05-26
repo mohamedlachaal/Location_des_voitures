@@ -1,0 +1,8 @@
+C:\Users\Dell\source\repos\tpvoiture\Rapport\bin\Debug\Rapport.exe.config
+C:\Users\Dell\source\repos\tpvoiture\Rapport\bin\Debug\Rapport.exe
+C:\Users\Dell\source\repos\tpvoiture\Rapport\bin\Debug\Rapport.pdb
+C:\Users\Dell\source\repos\tpvoiture\Rapport\obj\Debug\RdlCompile.cache
+C:\Users\Dell\source\repos\tpvoiture\Rapport\obj\Debug\RdlCompile.compiled
+C:\Users\Dell\source\repos\tpvoiture\Rapport\obj\Debug\Rapport.csproj.CoreCompileInputs.cache
+C:\Users\Dell\source\repos\tpvoiture\Rapport\obj\Debug\Rapport.exe
+C:\Users\Dell\source\repos\tpvoiture\Rapport\obj\Debug\Rapport.pdb

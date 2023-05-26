@@ -1,0 +1,62 @@
+﻿@model List<Client>
+@section title{
+    <title>Liste des Clients</title>
+}
+<p>
+    <a asp-action="Add">Ajouter un client</a>
+</p>
+<table class="table">
+    <tr>
+        <th>Nom</th>
+        <th>Prenom</th>
+        <th>Tel</th>
+        <th>Locations</th>
+        <th>Prix Total</th>
+
+        <th>Actions</th>
+
+    </tr>
+    @foreach (Client client in Model)
+    {
+        <tr>
+            <td>@client.nom</td>
+            <td>@client.prenom</td>
+            <td>@client.tel</td>
+
+
+            <td>
+                <table class="table ">
+                    <tr>
+
+                        <th><span class="badge badge-success">Date debut</span> </th>
+                        <th><span class="badge badge-success">Date Fin</span> </th>
+                    </tr>
+                    @foreach (Location location in client.locations)
+                    {
+                        <tr>
+                            <td>@location.date_debut</td>
+                            <td>@location.date_fin</td>
+
+                        </tr>
+                    }
+                </table>
+
+            </td>
+            <td>@client.SommeTotal DH</td>
+            <td>
+                <a asp-action="Delete" asp-route-id="@client.id" onclick="return confirm('are u sure you want delete this client')">Delete</a>
+                
+
+
+            </td>
+
+
+
+
+        </tr>
+    }
+
+
+
+
+</table>
